@@ -7,8 +7,9 @@ import addShopping from './listView.js'
 // Page Elements
 const input = document.querySelector('.search__field');
 const submitBtn = document.querySelector('.search__btn');
+const show = document.querySelector('.results__link')
 
-const apiKey = '389c426d-8b3a-4701-946e-e2ce5a2d2060';
+const apiKey = '8e6c2202-a03d-4c29-b121-6898fbc5708e';
 const url = 'https://forkify-api.herokuapp.com/api/v2/recipes'
 
 // Add AJAX functions here:
@@ -24,10 +25,21 @@ const getRecipe = () => {
     }
 
 
-const getOneRecipe = async (id) => {
-    
+ const getOneRecipe = (id) => {
+    const urlToFetch = `${url}/${id}?key=${apiKey}`
+
+    fetch(urlToFetch)
+    .then(res => res.json())
+    .then(data => showRecipe(data))
+    .catch(err => console.log(err))
     }
 
+    //getOneRecipe('5ed6604591c37cdc054bc883')
 
+    
 
     submitBtn.addEventListener('click', getRecipe)
+
+    
+
+   

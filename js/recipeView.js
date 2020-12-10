@@ -1,6 +1,6 @@
 
 const showRecipe = recipe => {
-    
+   console.log(recipe)
 };
 
 
