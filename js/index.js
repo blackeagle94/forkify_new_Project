@@ -2,7 +2,7 @@ import {renderRecipe} from './searchView.js'
 
 import showRecipe from './recipeView.js'
 
-import addShopping from './listView.js'
+
 
 // Page Elements
 const input = document.querySelector('.search__field');
@@ -25,26 +25,19 @@ const getRecipe = () => {
     }
 
 
- const getOneRecipe = (id) => {
-    const urlToFetch = `${url}/${id}?key=${apiKey}`
+//  const getOneRecipe = (id) => {
+//     const urlToFetch = `${url}/${id}?key=${apiKey}`
 
-    fetch(urlToFetch)
-    .then(res => res.json())
-    .then(data => showRecipe(data))
-    .catch(err => console.log(err))
-    }
+//     fetch(urlToFetch)
+//     .then(res => res.json())
+//     .then(data => showRecipe(data))
+//     .catch(err => console.log(err))
+//     }
 
     //getOneRecipe('5ed6604591c37cdc054bc883')
 
     
 
     submitBtn.addEventListener('click', getRecipe)
-
-
-   let x = document.getElementsByTagName("a");
-for(let i=0; i < x.length; i++)
-{
-  x[i].addEventListener("click", function() { alert(x[i].href); }, false);
-}
 
    

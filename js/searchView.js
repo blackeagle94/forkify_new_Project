@@ -1,4 +1,5 @@
 import showRecipe from './recipeView.js'
+//import addShopping from './listView.js'
 
 const apiKey = '389c426d-8b3a-4701-946e-e2ce5a2d2060';
 const url = 'https://forkify-api.herokuapp.com/api/v2/recipes'
@@ -13,20 +14,19 @@ const show = document.querySelector('.results__link')
         results.innerHTML += `
                  <li">
                     <a class="results__link" id=${names[i].id} href="#">
-                        <figure id=${names[i].id} class="results__fig">
-                            <img id=${names[i].id} src="${names[i].image_url}" alt="${names[i].title}" alt="Test">
+                        <figure class="results__fig">
+                            <img src="${names[i].image_url}" alt="${names[i].title}" alt="Test">
                         </figure>
-                        <div id=${names[i].id} class="results__data">
-                            <h4 id=${names[i].id} class="results__name">${names[i].title}</h4>
-                            <p id=${names[i].id} class="results__author">${names[i].publisher}</p>
+                        <div} class="results__data">
+                            <h4 class="results__name">${names[i].title}</h4>
+                            <p class="results__author">${names[i].publisher}</p>
                         </div>
                     </a>
                 </li>
         `
     }
     let x = document.getElementsByTagName("a");
-    for(let i=0; i < x.length; i++)
-    {
+    for(let i=0; i < x.length; i++) {
       x[i].addEventListener("click", function() { 
           let id = x[i].id
         const getOneRecipe = (id) => {
@@ -34,12 +34,12 @@ const show = document.querySelector('.results__link')
         
             fetch(urlToFetch)
             .then(res => res.json())
-            .then(data => showRecipe(data))
+            .then(data => {showRecipe(data)})
             .catch(err => console.log(err))
             }
 
             getOneRecipe(id)
-       }, false);
+       });
     }
     
 
