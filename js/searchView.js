@@ -1,5 +1,5 @@
 import showRecipe from './recipeView.js'
-//import addShopping from './listView.js'
+
 
 const apiKey = '389c426d-8b3a-4701-946e-e2ce5a2d2060';
 const url = 'https://forkify-api.herokuapp.com/api/v2/recipes'
@@ -8,7 +8,6 @@ const show = document.querySelector('.results__link')
  export const renderRecipe = recipe => {
     const names = recipe.data.recipes
     let results = document.getElementById('resultsAll')
-    //console.log(names[0])
     results.innerHTML = ''
     for (let i = 0; i < names.length; i++) {
         results.innerHTML += `

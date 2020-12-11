@@ -24,17 +24,10 @@ const getRecipe = () => {
 
     }
 
-
-//  const getOneRecipe = (id) => {
-//     const urlToFetch = `${url}/${id}?key=${apiKey}`
-
-//     fetch(urlToFetch)
-//     .then(res => res.json())
-//     .then(data => showRecipe(data))
-//     .catch(err => console.log(err))
-//     }
-
-    //getOneRecipe('5ed6604591c37cdc054bc883')
+input.addEventListener('click', () => {
+  input.value = ''
+  document.getElementById('resultsAll').innerHTML = ''
+})
 
     
 

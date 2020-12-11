@@ -1,7 +1,5 @@
-//import addShopping from "./listView";
 
 const showRecipe = recipe => {
-   //console.log(recipe.data.recipe)
    let minute = document.querySelector('.recipe__info-data--minutes')
    minute.innerHTML = recipe.data.recipe.cooking_time
    let service = document.querySelector('.recipe__info-data--people')
@@ -57,20 +55,17 @@ const showRecipe = recipe => {
      </li>
          `
       })
-      let deleteBtn = document.querySelector('.shopping__delete')
-      deleteBtn.addEventListener('click', (e) => {
-         console.log(e.target)
+      let deleteBtn = document.getElementsByTagName('button')
+      for (let i = 0; i  < deleteBtn.length; i++) {
+         deleteBtn[i].addEventListener('click', () => {
+            deleteBtn[i].parentElement.remove()
+         }
+         )
       }
-      )
-      //console.log(ingredients)
+      
    }
 
    addShoppingList.addEventListener('click', recipeItems)
-
-  
-
-
-
 
 };
 
