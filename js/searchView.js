@@ -1,4 +1,4 @@
-//import getOneRecipe from './index.js'
+import showRecipe from './recipeView.js'
 
 const apiKey = '389c426d-8b3a-4701-946e-e2ce5a2d2060';
 const url = 'https://forkify-api.herokuapp.com/api/v2/recipes'
@@ -24,10 +24,24 @@ const show = document.querySelector('.results__link')
                 </li>
         `
     }
+    let x = document.getElementsByTagName("a");
+    for(let i=0; i < x.length; i++)
+    {
+      x[i].addEventListener("click", function() { 
+          let id = x[i].id
+        const getOneRecipe = (id) => {
+            const urlToFetch = `${url}/${id}?key=${apiKey}`
+        
+            fetch(urlToFetch)
+            .then(res => res.json())
+            .then(data => showRecipe(data))
+            .catch(err => console.log(err))
+            }
 
-    show.addEventListener('click', function (e) {
-        console.log(e.target)
-    })
+            getOneRecipe(id)
+       }, false);
+    }
+    
 
 };
 

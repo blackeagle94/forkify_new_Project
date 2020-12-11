@@ -7,7 +7,7 @@ import addShopping from './listView.js'
 // Page Elements
 const input = document.querySelector('.search__field');
 const submitBtn = document.querySelector('.search__btn');
-const show = document.querySelector('.results__link')
+const show = document.getElementsByTagName('A')
 
 const apiKey = '8e6c2202-a03d-4c29-b121-6898fbc5708e';
 const url = 'https://forkify-api.herokuapp.com/api/v2/recipes'
@@ -40,6 +40,11 @@ const getRecipe = () => {
 
     submitBtn.addEventListener('click', getRecipe)
 
-    
+
+   let x = document.getElementsByTagName("a");
+for(let i=0; i < x.length; i++)
+{
+  x[i].addEventListener("click", function() { alert(x[i].href); }, false);
+}
 
    
