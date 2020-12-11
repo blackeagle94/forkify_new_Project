@@ -18,7 +18,7 @@ const showRecipe = recipe => {
 
    let directions = document.querySelector('.directions')
    directions.href = recipe.data.recipe.source_url
-   console.log(recipe.data.recipe)
+  
 
 
    ingredients.forEach(ing => {
@@ -55,17 +55,13 @@ const showRecipe = recipe => {
      </li>
          `
       })
-      let deleteBtn = document.getElementsByTagName('button')
-      for (let i = 0; i  < deleteBtn.length; i++) {
-         deleteBtn[i].addEventListener('click', () => {
-            deleteBtn[i].parentElement.remove()
-         }
-         )
-      }
-      
    }
 
    addShoppingList.addEventListener('click', recipeItems)
+
+   
+
+
 
 };
 
