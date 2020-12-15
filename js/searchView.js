@@ -10,6 +10,7 @@ const show = document.querySelector('.results__link')
     let results = document.getElementById('resultsAll')
     results.innerHTML = ''
     for (let i = 0; i < names.length; i++) {
+        let lengthTitle = names[i].title.length <= 5 ? names[i].title : names[i].title.split(' ').slice(0, 5).join(' ') + ' ...';
         results.innerHTML += `
                  <li">
                     <a class="results__link" id=${names[i].id} href="#">
@@ -17,7 +18,7 @@ const show = document.querySelector('.results__link')
                             <img src="${names[i].image_url}" alt="${names[i].title}" alt="Test">
                         </figure>
                         <div} class="results__data">
-                            <h4 class="results__name">${names[i].title}</h4>
+                            <h4 class="results__name">${lengthTitle}</h4>
                             <p class="results__author">${names[i].publisher}</p>
                         </div>
                     </a>
