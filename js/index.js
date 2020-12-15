@@ -7,8 +7,6 @@ import showRecipe from './recipeView.js'
 // Page Elements
 const input = document.querySelector('.search__field');
 const submitBtn = document.querySelector('.search__btn');
-const show = document.getElementsByTagName('A')
-
 const shoppingList = document.querySelector('.shopping__list')
 
 const apiKey = '8e6c2202-a03d-4c29-b121-6898fbc5708e';
